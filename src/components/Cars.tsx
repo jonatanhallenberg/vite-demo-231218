@@ -35,18 +35,48 @@ export const Cars = () => {
     const removeCarById = (id) => {
 
         //1. Använd .filter för att filtrera bort bilen med id som kommer in i funkitionen
-        //2. Anropa setCars med den nya filtrerade listan
+        const updatedCars = cars.filter(car => car.id !== id);
 
+        //2. Anropa setCars med den nya filtrerade listan
+        setCars(updatedCars);
+
+    }
+
+    const [manufacturer, setManufacturer] = useState("");
+
+    //Uppgift: 
+    // 1. Skapa en state-variabel för model
+    // 2. När textrutan för model ändras -> spara ner nya värdet med setModel
+    // 3. Uppdatera onSubmitForm så att värdet från statet används istället för hårdkodat "Modell"
+    // 4. Töm alla textboxar när man postat
+
+    const onSubmitForm = (event) => { 
+        event.preventDefault();
+        addCar(3, manufacturer, "Modell");
     }
 
     return <>
         <h1>Bilar</h1>
-        <button onClick={() => updateManufacturerById(1, "Ford", "Focus")}>Uppdatera volvo till ford</button>
         {
-            cars.map(car => <div>{car.manufacturer}</div>)
+            cars.map(car => <div key={car.id}>Manufacturer: {car.manufacturer}, Model: {car.model}</div>)
         }
-        <button onClick={() => addCar(3, "VW", "Beetle")}>Lägg till bil</button>
-        <button onClick={() => removeCarById(1)}>Ta bort Volvo</button>
+        {/* <button onClick={() => updateManufacturerById(1, "Ford", "Focus")}>Uppdatera volvo till ford</button> */}
+
+        {/* <button onClick={() => addCar(3, "VW", "Beetle")}>Lägg till bil</button> */}
+        {/* <button onClick={() => removeCarById(1)}>Ta bort Volvo</button> */}
+
+        <form onSubmit={onSubmitForm}>
+            <div>
+                <label>Manufacturer</label>
+                <input value={manufacturer} onChange={(event) => setManufacturer(event.target.value)} type="text"></input>
+                {manufacturer}
+            </div>
+            <div>
+                <label>Model</label>
+                <input type="text"></input>
+            </div>
+            <button type="submit">Spara bil</button>
+        </form>
     </>
 
 }
