@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Bild } from "../components/Bild";
 import { BildText } from "../components/BildText";
 import { ButtonCSSModule } from "../components/ButtonCSSModule";
@@ -8,6 +9,7 @@ import { Title } from "../components/Title";
 
 export const StartPage = () => (
     <>
+        <Link to="/catfactsreactquery">React Query Example</Link>
         {/* Button med global styling */}
         <button className="red-button">En röd knapp</button>
 
