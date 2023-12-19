@@ -1,0 +1,15 @@
+.redButton {
+    background-color: red;
+}
+
+.blueButton {
+    background-color: blue;
+}
+
+.yellowButton {
+    background-color: yellow;
+}
+
+.redBorderButton {
+    border: 3px solid red;
+}
