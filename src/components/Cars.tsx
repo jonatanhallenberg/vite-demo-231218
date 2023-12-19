@@ -43,6 +43,7 @@ export const Cars = () => {
     }
 
     const [manufacturer, setManufacturer] = useState("");
+    const [model, setModel] = useState("");
 
     //Uppgift: 
     // 1. Skapa en state-variabel för model
@@ -50,9 +51,11 @@ export const Cars = () => {
     // 3. Uppdatera onSubmitForm så att värdet från statet används istället för hårdkodat "Modell"
     // 4. Töm alla textboxar när man postat
 
-    const onSubmitForm = (event) => { 
+    const onSubmitForm = (event) => {
         event.preventDefault();
-        addCar(3, manufacturer, "Modell");
+        addCar(3, manufacturer, model);
+        setModel("");
+        setManufacturer("");
     }
 
     return <>
@@ -73,7 +76,7 @@ export const Cars = () => {
             </div>
             <div>
                 <label>Model</label>
-                <input type="text"></input>
+                <input type="text" value={model} onChange={(event) => setModel(event.target.value)}></input>
             </div>
             <button type="submit">Spara bil</button>
         </form>

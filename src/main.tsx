@@ -9,6 +9,7 @@ import {
 import { StartPage } from './pages/StartPage.tsx';
 import { LoginPage } from './pages/LoginPage.tsx';
 import { Cars } from './components/Cars.tsx';
+import { CatFact } from './components/CatFact.tsx';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,14 @@ const router = createBrowserRouter([
   {
     path: "/useStateExample",
     element: <Cars />
+  },
+  {
+    path: "/fetchDataExample",
+    element: <CatFact />
+  },
+  {
+    path: "/catFacts",
+    element: <CatFact />
   }
 ]);
 
