@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from '../feature/counter/counterSlice';
+import catReducer from '../feature/cat/catSlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer
+    counter: counterReducer,
+    cat: catReducer
   },
 })
 

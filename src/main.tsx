@@ -16,6 +16,7 @@ import { CatFactsReactQuery } from './components/CatFactsReactQuery.tsx';
 import { ReduxDemo } from './components/ReduxDemo.tsx';
 import { store } from './app/store'
 import { Provider } from 'react-redux'
+import { CatFactsRedux } from './components/CatFactsRedux.tsx';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
   {
     path: "reduxdemo",
     element: <ReduxDemo />
+  },
+  {
+    path: "catfactsredux",
+    element: <CatFactsRedux />
   }
 ]);
 
