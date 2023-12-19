@@ -17,6 +17,7 @@ import { ReduxDemo } from './components/ReduxDemo.tsx';
 import { store } from './app/store'
 import { Provider } from 'react-redux'
 import { CatFactsRedux } from './components/CatFactsRedux.tsx';
+import { CarsUseForm } from './components/CarsUseForm.tsx';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
   {
     path: "catfactsredux",
     element: <CatFactsRedux />
+  },
+  {
+    path: "useform",
+    element: <CarsUseForm />
   }
 ]);
 

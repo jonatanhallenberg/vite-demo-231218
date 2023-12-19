@@ -6,6 +6,7 @@ export const CatFactsRedux = () => {
 
     const dispatch = useDispatch();
     const facts = useSelector(state => state.cat.facts);
+    const loading = useSelector(state => state.cat.loading)
 
     useEffect(() => {
         dispatch(fetchCatFacts())
@@ -13,8 +14,8 @@ export const CatFactsRedux = () => {
     
     return <>
         <h1>Kattfakta</h1>
-        {/* {/* {loading && <div>Laddar...</div>}
-        {error && <div style={{ color: "red" }}>{error}</div>} */}
+        {loading && <div>Laddar...</div>}
+        {/* {error && <div style={{ color: "red" }}>{error}</div>} */}
         <ul>{facts.map(catFact => <li>{catFact.fact}</li>)}</ul>
     </>
 

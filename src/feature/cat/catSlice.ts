@@ -26,6 +26,15 @@ export const catSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchCatFacts.fulfilled, (state, action) => {
       state.facts = action.payload;
+      state.loading = false;
+    })
+
+    builder.addCase(fetchCatFacts.pending, (state, action) => {
+      state.loading = true;
+    })
+
+    builder.addCase(fetchCatFacts.rejected, (state, action) => {
+      console.log('rejected', action);
     })
 
     //1. Lägg till en builder.addCase för pending
